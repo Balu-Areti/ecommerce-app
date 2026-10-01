@@ -45,7 +45,7 @@ public class CustomerUI {
 
         //Controller is backend entry gate.
         CustomerController customerController = new CustomerController();
-        Customer registeredCustomer = customerController.register(customer);   //single object we passed to Controller
+        Customer registeredCustomer = customerController.register(customer);
         System.out.println("Registered Customer Details: " + registeredCustomer );
 
         return customer;
