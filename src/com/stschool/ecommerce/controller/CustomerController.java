@@ -3,11 +3,14 @@ package com.stschool.ecommerce.controller;
 import com.stschool.ecommerce.model.Customer;
 import com.stschool.ecommerce.service.CustomerService;
 
+import java.util.List;
+
 public class CustomerController {
 
     private final CustomerService customerService;
-    public CustomerController(){
-        this.customerService = new CustomerService();
+
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
     }
 
     public Customer register(Customer customer){
@@ -18,5 +21,8 @@ public class CustomerController {
         Customer registedCustomer =  customerService.register(customer);
         System.out.println("Customer Registered Successfully");
         return registedCustomer;
+    }
+    public List<Customer> getCustomers(){
+        return customerService.getCustomers();
     }
 }

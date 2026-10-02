@@ -1,15 +1,17 @@
 package com.stschool.ecommerce.repository;
 
 import com.stschool.ecommerce.model.Customer;
+import com.stschool.ecommerce.util.CsvUtil;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository {
     private final List<Customer> customerList;
 
-    public CustomerRepository(){
-        this.customerList = new ArrayList<>();
+    public CustomerRepository() throws IOException {
+        this.customerList = CsvUtil.readCustomersFromCsv();
     }
 
 
